@@ -19,6 +19,6 @@ describe Phone do
     )
 
     mobile_phone.valid?
-    expect(mobile_phone.errors[:phone]).to include("has already been taken")
+    expect(mobile_phone.errors[:phone]).to include "has already been taken"
   end
 end
