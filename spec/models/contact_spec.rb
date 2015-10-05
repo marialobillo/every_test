@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 describe Contact do
+
+  it "has a valid factory" do
+    expect(FactoryGirl.build(:contact)).to be_valid
+  end
+
   it 'is valid with a firstname, lastname and email' do
     contact = Contact.new(
       firstname: 'Maria',
@@ -43,7 +48,7 @@ describe Contact do
 
   it 'returns a contacts full name as a string' do
     contact = Contact.new(firstname: 'Jane', lastname: 'Doe',
-    email:'janedoe@exmplae.com')
+    email:'janedoe@example.com')
     expect(contact.name).to eq 'Jane Doe'
   end
 

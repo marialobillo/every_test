@@ -1,0 +1,9 @@
+maria:
+  firstname: "Maria"
+  lastname: "Autumn"
+  email: "maria@example.com"
+
+john:
+  firstname: "John"
+  lastname: "Doe"
+  email: "johndoe@example.com"
