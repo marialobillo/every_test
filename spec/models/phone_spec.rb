@@ -22,23 +22,14 @@ describe Phone do
   end
 
   it 'allows two contacts to share a phone number' do
-    contact = Contact.create(
-      firstname: 'Maria',
-      lastname: 'Tester',
-      email: 'mariatester@example.com'
-    )
-    contact.phones.create(
+    create(:phone,
       phone_type: 'home',
-      phone: '333-444-555'
+      phone: '785-555-1234'
     )
 
-    other_contact = Contact.new
-    other_phone = other_contact.phones.build(
+    expect(build(:phone,
       phone_type: 'home',
-      phone: '333-444-555'
-    )
-
-    expect(other_phone).to be_valid
+      phone: '785-555-1234')).to be_valid
   end
 
 end
