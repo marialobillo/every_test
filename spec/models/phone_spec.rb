@@ -3,18 +3,14 @@ require 'rails_helper'
 describe Phone do
 
   it 'does not allow duplicate phone numbers per contact' do
-    contact = Contact.create(
-      firstname: 'Maria',
-      lastname: 'Tester',
-      email: 'mariatester@example.com'
+    contact = create(:contact)
+    create(:home_phone,
+      contact: contact,
+      phone: '785-555-1234'
     )
-    contact.phones.create(
-      phone_type: 'home',
-      phone: '333-444-555'
-    )
-    mobile_phone = contact.phones.build(
-      phone_type: 'mobile',
-      phone: '333-444-555'
+    mobile_phone = contact.phones.create(
+      contact: contact,
+      phone: '785-555-1234'
     )
 
     mobile_phone.valid?
